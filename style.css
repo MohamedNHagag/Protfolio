@@ -1189,11 +1189,13 @@ header .navbar li{margin-inline: 3px;}
   background-color: #333;
 }
 
-    /* علامة الإكس */
+       /* علامة الإكس */
 .close-menu-button {
   position: absolute;
   top: 15px;
-  right: 20px;
+  /* right: 20px; */ /* احذف هذا السطر أو ضعه كتعليق */
+  left: 20px;     /* أضف هذا السطر لتحديد المسافة من اليسار */
+
   background: none;
   border: none;
   color: #eee;
