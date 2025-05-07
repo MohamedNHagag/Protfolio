@@ -1302,6 +1302,7 @@ z-index: 102; /* أعلى من القائمة نفسها */
 .category-card{width: 85%;
   padding-inline: 10px;}
 
+.category-card a{padding-inline: 0;}
 
 
   /* تعديلات على قسم الشهادات */
