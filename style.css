@@ -1,0 +1,1491 @@
+/* Global Styles */
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 0;
+  padding: 0;
+  background-color: #222831;
+  color: #EEEEEE;
+}
+html {
+  scroll-behavior: smooth; /* تأثير التمرير السلس */
+}
+.hero-content{
+  width: 100%;
+  text-align: center; /* توسيط محتوى الهيرو في الموبايل */
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #222831;
+}
+header .navbar ul {
+  list-style-type: none;
+}
+header .navbar li {
+  display: inline-block;
+  margin: 0 10px;
+}
+header .navbar a {
+  color: black;
+  text-decoration: none;
+}
+
+header .navbar button {
+  background-color: transparent;
+  color: #00ADB5;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+section {
+  padding: 50px 20px;
+}
+#projects .project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+.nav-links a.active {
+  color: #2dd4bf; /* لون النص المطلوب */
+  font-weight: bold;
+  padding-bottom: 6px; 
+  }
+  .nav-links a.active::after {
+    content: ''; 
+    position: absolute;
+    bottom: -7px;
+    left: 10%; /* بداية الظل من اليسار (10% من عرض الرابط) */
+    width: 80%; 
+    height: 3px; 
+    background-color: #2dd4bf; 
+    filter:  blur(1px);; 
+    z-index: -1; /* اختياري: لوضع الظل خلف النص */
+  }
+
+
+
+/* تنسيق الـ header */
+header {
+
+  padding: 10px 20px; /* قللنا الـ padding الرأسي وأضفنا أفقي */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* تم إزالة padding: 19px 0 0 0; المكرر والذي به خطأ */
+}
+
+/* حاوية العناصر داخل الهيدر لتنظيمها بالـ flexbox */
+.header-container {
+  display: flex; /* استخدام Flexbox لترتيب العناصر أفقياً */
+  justify-content: space-between; /* توزيع المساحة بين العناصر (لوجو، قائمة تنقل، عناصر اليمين) */
+  align-items: center; /* محاذاة العناصر عمودياً في المنتصف */
+  max-width: 1200px; /* يمكنك تحديد عرض أقصى للمحتوى */
+  margin: 0 auto; /* توسيط المحتوى داخل الهيدر */
+
+}
+
+
+
+header .navbar {
+  padding: 0;
+  margin: auto; /* تم التعديل هنا لتوسيط العنصر أفقياً في Flex container */
+  border-radius: 30px;
+  padding: 5px 15px;
+}
+header .navbar{background-color: white;}
+
+nav {
+  text-align: center; /* هذا التنسيق لم يعد ضرورياً جداً مع Flexbox لكن لا يضر */
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* استخدام Flexbox لترتيب عناصر القائمة أفقياً */
+  justify-content: center; /* توسيط عناصر القائمة داخل الحاوية */
+  align-items: center; /* محاذاة عناصر القائمة عمودياً */
+}
+
+.nav-links li {
+  margin: 0 10px; /* تقليل المسافة بين عناصر القائمة */
+  padding-top: 0; /* تم إزالة padding-top الثابت */
+  margin: 12px;
+  padding-block: 5px;
+}
+
+.nav-links a {
+  color: #EEEEEE;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  border-bottom: none;
+position: relative; /* أضف هذا السطر */
+  }
+
+
+  .nav-links a:hover {
+    color: #2dd4bf !important;
+  }
+
+/* تنسيق حاوية العناصر على اليمين */
+.header-right {
+  display: flex; /* استخدام Flexbox لترتيب العناصر داخلها أفقياً */
+  align-items: center; /* محاذاة العناصر عمودياً */
+  margin-left: 30px; /* مسافة بين قائمة التنقل وعناصر اليمين */
+  padding-right: 31px;
+
+}
+
+
+
+
+/* CSS للوضع العادي (الشاشات الكبيرة) */
+.navbar .nav-links {
+  display: flex; /* أو أي طريقة عرض مناسبة */
+}
+
+.header-right ul{list-style: none;}
+
+
+
+
+/* تنسيق زر الوضع الليلي */
+.dark-mode-toggle {
+  background-color:rgb(39 39 42/.9); /* خلفية داكنة لزر الوضع الليلي */
+  border: none;
+  color: #EEEEEE; /* لون الأيقونة */
+  font-size: 1.2em; /* حجم مناسب للأيقونة */
+  border-radius: 50%; /* لجعل الزر دائرياً */
+  width: 41px; /* عرض الزر */
+  height: 40px; /* ارتفاع الزر */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 20px; /* مسافة بين الأيقونة وقائمة الجوال (إذا وجدت) */
+}
+
+.dark-mode-toggle:hover {
+  background-color: #50555c; /* لون خلفية عند التمرير */
+}
+
+
+
+.dark-mode header .navbar a {
+  color: white;}
+
+/* تنسيق أيقونة قائمة الجوال (تحتاج لتنسيقات إضافية للظهور والإخفاء حسب حجم الشاشة) */
+.mobile-menu-icon {
+  color: #EEEEEE;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none; /* افتراضياً تكون مخفية في شاشات الكمبيوتر الكبيرة */
+  /* ستحتاج Media Queries لإظهارها في الشاشات الصغيرة وإخفاء قائمة التنقل */
+}
+
+/* مثال على تمييز الرابط النشط (إذا كنت تستخدم كلاس active) */
+.nav-links a.active {
+  color: #00ADB5;
+  font-weight: bold; /* أو أي تمييز آخر */
+}
+
+
+#darkModeToggle {
+  cursor: pointer;
+}
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #FFFFFF;
+}
+
+body.dark-mode header .navbar {
+  background-color: rgb(39 39 42/.9);
+}
+
+body.dark-mode .project-card {
+  background-color: #393E46;
+}
+
+body.dark-mode .project-card:hover {
+  background-color: #444;
+}
+
+body.dark-mode .project-card a {
+  color: #00ADB5;
+}
+
+/* AOS (Animation on Scroll) */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+}
+
+body.dark-mode .special-heading {
+  background: linear-gradient(to bottom, #333943, #18181b);
+}
+
+/* تغيير لون h2 داخل .special-heading عند Dark Mode */
+body.dark-mode .special-heading h2 {
+  color: #ccc; /* أو #e0e0e0 حسب ما تحب */
+}
+
+
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #222831;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #18181b; /* خلفية داكنة */
+  color: #EEEEEE; /* نص فاتح */
+}
+
+
+
+body.dark-mode .theme-toggle {
+  color: #EEEEEE;
+}
+/* التأثير الافتراضي - العناصر مخفية */
+.section.animated-section {
+  opacity: 0;
+  transform: translateY(50px); /* بدء التأثير من الأسفل */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* عند ظهور العناصر */
+.section.animated-section.visible {
+  opacity: 1;
+  transform: translateY(0); /* عودة للعناصر إلى مكانها الطبيعي */
+}
+
+
+.dark-mode .container{background-color: #18181b;}
+.dark-mode .container .contact-form  h2{color: white;}
+.dark-mode .container .contact-info div,i,a{color: white;}
+.dark-mode .contact-info .gg{color: white;}
+.dark-mode .footer{background-color: #25252a;color: white  ;}
+
+.dark-mode .certificate-details h3{color: white;}
+
+.dark-mode .contact-form input,  textarea{background-color: #1a1a1a;color: white;border: #757575 0.1px solid;border-radius: 20px;}
+.dark-mode .contact-form  textarea{background-color: #1a1a1a;color:white;border: #757575 0.1px solid;border-radius: 7px;}
+
+
+
+/* يمكنك إضافة Media Queries هنا لتنسيقات الشاشات المختلفة (الاستجابة) */
+/* @media (max-width: 768px) { ... } */
+
+
+
+
+
+
+
+
+
+
+/* تنسيق hero */
+.hero {
+  display: flex;
+  justify-content: space-between; /* توزيع المحتوى بين النص والصورة */
+  align-items: center;
+  padding: 40px;
+  margin-top: 43px;
+}
+.hero-content{text-align: start;}
+.mo{color: #00BEC9;}
+.buttons i{margin: 7px;}
+#about p,h2{ width: 70%;margin-left: 50px;}
+.hh{margin-left: 0px;}
+#about p{color: #a1a1aa;font-size: 16px;font-weight:400;    line-height: 30px;padding-block:0 ;}
+/* تنسيق النص */
+.text-content {
+  flex: 1;
+  max-width: 50%; /* الحد من عرض النص */
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 18px;
+}
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+
+
+/* تنسيقات الأيقونات اللي على اليمين (هتكون بالشكل اللي عايزه) */
+.social-links-right {
+  display: flex; /* عشان نرص الأيقونات جنب بعض أفقياً */
+  align-items: center; /* محاذاة العناصر عمودياً في النص */
+  /* ممكن تضيف مسافات بين الأيقونات لو عايز */
+}
+
+.social-links-right a.social-icon-right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* لمركزة الأيقونة لو مفيش نص */
+  width: 30px; /* عرض الأيقونة */
+  height: 30px; /* طول الأيقونة */
+  margin-left: 10px; /* مسافة بين كل أيقونة والتانية */
+  background-color: #222; /* مثال لخلفية */
+  color: #eee; /* مثال للون الأيقونة */
+  border-radius: 50%; /* عشان تكون دائرية */
+  text-decoration: none;
+  font-size: 1.2em; /* حجم الأيقونة */
+}
+
+/* التأثير عند الـ hover على أي أيقونة */
+.social-links-left a.social-icon:hover,
+.social-links-right a.social-icon-right:hover {
+  transform: scale(1.1); /* تكبير الأيقونة بنسبة 10% عند الـ hover */
+  transition: transform 0.2s ease-in-out; /* إضافة تأثير الانتقال السلس */
+}
+
+
+/* تنسيق الصورة */
+.profile-img {
+  width: 140px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-left: 20px; /* المسافة بين الصورة والمحتوى النصي */
+}
+
+
+
+
+
+
+
+
+
+
+#skills{
+  padding-bottom: 2px;
+  padding-block: 0;
+
+}
+#skills .skills-list ul li{color:red ;}
+
+.skills-list li i{color:#000}
+.dark-mode .skills-list li i{color: #eee;    margin-right: 7px;}
+
+
+.mobile-nav-links{display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+#about-me img {
+  width: 150px;   /* ضبط العرض */
+  height: 150px; /* ضبط الطول */
+  border-radius: 50%; /* لجعل الصورة دائرية */
+  object-fit: cover; /* لضبط الصورة بما يتناسب مع المساحة */
+  margin: 20px auto; /* إضافة مسافة حول الصورة */
+  display: block;
+}
+
+
+
+
+
+
+
+
+/* الإعدادات الافتراضية - Light Mode */
+body {
+  background-color: #EEEEEE; /* خلفية فاتحة */
+  color: #222831; /* نص داكن */
+  transition: background-color 0.5s, color 0.5s; /* تأثير التبديل بين الألوان */
+}
+
+
+
+.nav-links a {
+  color: #222831; /* لون النص في الروابط */
+  transition: color 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* مثال بسيط لتنسيق البطاقات في style.css */
+#categories-container {
+  display: flex; /* أو grid */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* المسافة بين البطاقات */
+  padding: 30px;
+}
+
+.category-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* لإخفاء أي أجزاء من الصورة تتجاوز الحدود */
+  width: 300px; /* أو استخدم نسبة مئوية */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير عند المرور */
+  background-color: #fff;
+  text-align: center; /* لتوسيط المحتوى */
+  padding-top: 0;
+
+}
+
+.category-card:hover {
+  transform: translateY(-5px); /* رفع البطاقة قليلاً */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.category-card a {
+  text-decoration: none;
+  color: inherit; /* يرث لون النص من الأب */
+  display: block; /* لجعل الرابط يملأ البطاقة */
+  padding: 15px;
+}
+
+.category-card img { 
+  width: 100%;
+  margin-bottom: 10px;
+  height: 199px;
+  border-radius: 9px;
+}
+
+.category-card h2 {
+  font-size: 1.4em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.category-card p {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ----- أنماط الأنيميشن (ستتم إضافتها لاحقًا) ----- */
+.reveal-item {
+  opacity: 0; /* ابدأ شفافًا */
+  transform: translateY(40px); /* ابدأ من أسفل قليلاً */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-item.visible {
+  opacity: 1; /* أظهر العنصر */
+  transform: translateY(0); /* أرجعه لمكانه الأصلي */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* مثال لتنسيق شبكة المشاريع في style.css */
+#projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* أعمدة متجاوبة */
+  gap: 25px; /* مسافات بين البطاقات */
+  padding: 30px;
+}
+
+.project-card {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+  
+  padding-inline: 8px !important;
+}
+
+.project-card:hover {
+ box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.project-card img {
+  width: 100%; /* تجعل الصورة تملأ عرض البطاقة */
+  height: 200px; /* ارتفاع ثابت للصورة، يمكنك تعديله */
+  object-fit: cover; /* لضمان ملء الصورة للمساحة دون تشويه */
+  display: block; /* لإزالة أي مسافات أسفل الصورة */
+}
+
+.project-card h3 {
+  font-size: 1.2em;
+  margin: 15px 15px 5px 15px; /* هوامش للنص */
+  color: #333;
+}
+
+.project-card p {
+  font-size: 0.9em;
+  color: #777;
+  margin: 0 15px 15px 15px;
+  line-height: 1.4;
+  
+}
+
+/* (اختياري) تنسيق زر التفاصيل */
+.details-link {
+  display: inline-block;
+  margin: 0 15px 15px 15px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+
+/* إضافة تأخير مختلف لكل عنصر (إذا كان لديك عدد قليل ومعروف) */
+.category-card:nth-child(1) { transition-delay: 0.1s; }
+.category-card:nth-child(2) { transition-delay: 0.2s; }
+.category-card:nth-child(3) { transition-delay: 0.3s; }
+/* وهكذا... */
+
+/* تأكد من تضمين الـ delay في الـ transition الأصلي */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(40px);
+    /* تضمين الـ delay في الـ transition */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, transition-delay 0s; /* القيمة الافتراضية للتأخير هي 0 */
+}
+
+ .reveal-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+ }
+
+
+/* (تأكد أن هذا الكود موجود في ملف style.css) */
+
+/* الأنماط الأساسية للبطاقة (كما هي من قبل أو مشابهة) */
+.category-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* الظل الافتراضي الخفيف */
+  text-align: center;
+  /* الأهم: خاصية الـ transition لجعل التأثير ناعمًا */
+  /* تأكد من تضمين box-shadow هنا */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ----> هذا هو الكود المطلوب إضافته أو تعديله <---- */
+.category-card:hover {
+  transform: translateY(-5px); /* للحفاظ على تأثير الرفع البسيط */
+  box-shadow: 0px 6px 18px 0px #00BEC9; /* الظل المطلوب باللون المحدد */
+  /* يمكنك تعديل الأرقام (6px 18px) للتحكم في انتشار وقوة الظل */
+}
+
+/* باقي أنماط البطاقة (a, img, h2, p) كما هي */
+.category-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 15px;
+}
+
+
+.category-card p{    margin-bottom: 0;}
+
+/* في ملف style.css */
+
+/* استهدف الصورة داخل بطاقة المشروع */
+.project-card img {
+  width: 100%;          /* <-- تأكد أنها موجودة لتملأ العرض */
+  height: 250px;        /* <-- قم بزيادة هذا الرقم حسب رغبتك (جرب 250px أو 300px مثلاً) */
+  object-fit: cover;    /* <-- أهم خاصية: تملأ المساحة وتقص الزائد للحفاظ على النسبة */
+  display: block;       /* <-- تمنع المسافات البيضاء الإضافية */
+  /* لا تضع margin هنا إذا أردت أن تلتصق بالحواف */
+}
+
+
+
+/* تأكد من أنماط البطاقة نفسها */
+.project-card p {
+  font-size: 0.9em;
+  color: #777;
+  /* الهامش السفلي هنا يتحكم في المسافة بين نهاية الوصف وبداية السهم */
+  margin: 0 15px 10px 15px; /* قللت الهامش السفلي قليلاً */
+  line-height: 1.4;
+}
+
+/* أنماط النص داخل البطاقة (للتوضيح، تأكد أنها منفصلة عن الصورة) */
+.project-card h3 {
+  font-size: 1.2em;
+  /* أضف padding أو margin هنا للنص فقط */
+  margin: 15px 15px 5px 15px;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 0.9em;
+  color: #777;
+  /* أضف padding أو margin هنا للنص فقط */
+  margin: 0 15px 15px 15px;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+/* --- أكواد جديدة لتنسيق سهم المشاريع المتحرك --- */
+
+/* تنسيق الرابط الحاوي للسهم */
+.project-arrow-link {
+  display: block; /* اجعله يأخذ سطرًا جديدًا */
+  text-align: right; /* ضع السهم في أقصى اليمين */
+  margin: 10px 15px 15px 15px; /* هوامش حول الرابط (أعلى 10، يمين 15، أسفل 15، يسار 15) */
+  font-size: 2em; /* **--> تم تكبير حجم السهم هنا (من 1.5em إلى 2em)** يمكنك زيادة القيمة أكثر إذا أردت */
+  text-decoration: none; /* إزالة الخط تحت الرابط */
+  color: #555; /* لون السهم الأساسي (لون باهت قبل الانيميشن) */
+  transition: color 0.3s ease; /* انتقال ناعم للون إذا أردت مثلاً يتغير لونه في الـ hover أيضاً */
+  text-align: center;
+  padding-top: 0;
+  margin-block: 0;
+}
+
+/* تعريف حركة الانيميشن (تم تعديل مسافة الإزاحة) */
+@keyframes pulse-arrow {
+  0% {
+      transform: translateX(0); /* في البداية: لا يوجد إزاحة */
+      color: #555; /* لون السهم الأساسي */
+  }
+  50% {
+      transform: translateX(8px); /* **--> تم زيادة مسافة الإزاحة هنا (من 5px إلى 8px)** لتتناسب مع الحجم الأكبر */
+      color: #00ADB5; /* اللون المطلوب في ذروة الحركة */
+  }
+  100% {
+      transform: translateX(0); /* في النهاية: يعود لمكانه الأصلي */
+      color: #555; /* يعود للون السهم الأساسي */
+  }
+}
+
+/* تطبيق الانيميشن على الرابط (بدون تغيير) */
+.project-arrow-link {
+  animation-name: pulse-arrow;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+/* --- باقي أكواد الـ CSS الموجودة لديك --- */
+/* تأكد أن الأكواد الجديدة لا تتعارض مع الأكواد القديمة */
+/* مثلاً تأكد أن الـ padding في .project-card لا يغطي السهم */
+
+
+/* مثال لتنسيق شبكة المشاريع في style.css (موجود عندك بالفعل) */
+#projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+/* الأنماط الأساسية لبطاقة المشروع (موجود عندك بالفعل) */
+.project-card {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+  /*
+    **--> تمت إضافة padding-bottom هنا لتوحيد المسافة بعد السهم <--**
+    اجعل هذه القيمة كافية لترك مسافة مناسبة بعد آخر عنصر (السهم).
+  */
+  padding-bottom: 20px; /* يمكنك تعديل هذه القيمة (جرب 15px, 20px, 25px) */
+  padding-top: 0; /* تأكد أن لا يوجد بادينج علوي يزيح الصورة */
+  padding-left: 0; /* تأكد أن لا يوجد بادينج يساري يزيح المحتوى */
+  padding-right: 0; /* تأكد أن لا يوجد بادينج يميني يزيح المحتوى */
+}
+
+
+
+
+
+/* تأثير الـ hover على بطاقة المشروع (موجود عندك بالفعل) */
+.project-card:hover {
+ box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* تنسيق الصورة داخل بطاقة المشروع (تم تعديل الارتفاع) */
+.project-card img {
+  width: 100%;
+  height: 250px; /* الارتفاع المعدل */
+  object-fit: cover;
+  display: block;
+}
+
+/* تنسيق عنوان المشروع (موجود عندك بالفعل) */
+.project-card h3 {
+  font-size: 1.2em;
+  margin: 15px 15px 5px 15px;
+  color: #333;
+}
+
+/* تنسيق وصف المشروع (موجود عندك بالفعل) */
+.project-card p {
+  font-size: 0.9em;
+  color: #777;
+  /* تأكد أن هذا الـ margin لا يتعارض مع هوامش السهم */
+  margin: 0 15px 10px 15px; /* قللت الهامش السفلي قليلاً لأترك مسافة للسهم */
+  line-height: 1.4;
+
+}
+
+/* (اختياري) تنسيق زر التفاصيل (موجود عندك بالفعل) */
+/* إذا كنت ستستخدم السهم كرابط أساسي، قد لا تحتاج هذا الزر */
+.details-link {
+  display: inline-block;
+  margin: 0 15px 15px 15px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+
+/* --- أكواد أخرى قمت بتضمينها مسبقاً --- */
+/* إضافة تأخير مختلف لكل عنصر (موجود عندك بالفعل) */
+.category-card:nth-child(1) { transition-delay: 0.1s; }
+.category-card:nth-child(2) { transition-delay: 0.2s; }
+.category-card:nth-child(3) { transition-delay: 0.3s; }
+/* وهكذا... */
+
+/* تنسيق عناصر تظهر بتأثير عند التمرير (موجود عندك بالفعل) */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* الأنماط الأساسية لبطاقة التصنيف (موجود عندك بالفعل) */
+.category-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 25%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #e6ebeb;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0;
+  margin-inline: 10px;
+}
+
+/* تأثير الـ hover لبطاقة التصنيف (موجود عندك بالفعل) */
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 18px 0px #00BEC9;
+}
+
+/* تنسيق الرابط داخل بطاقة التصنيف (موجود عندك بالفعل) */
+.category-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 15px;
+}
+
+/* الأنماط الزائدة التي لا تبدو مرتبطة ببنية البطاقة الرئيسية (موجود عندك بالفعل ومعلق) */
+/*
+.imagM{
+  height: 209px;
+  width: 104%;
+}
+.imagM img{
+  height: 195px;
+  border-radius: 13px;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#certificates {
+padding: 50px 0;
+}
+
+
+.special-heading {
+  font-size: 50px;
+  text-align: center;
+  color: #8f8f8f;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+  background:linear-gradient(to bottom, #e3e3e3, #eeee);
+}
+  .special-heading +p{
+    text-align: center;
+    margin: -30px 0 0;
+    font-size: 20px;
+    color: #797F8F;
+    
+  }
+
+
+
+#certificates h2{margin-bottom: 35px;}
+.certificates-container {
+display: flex;
+flex-wrap: wrap;
+gap: 30px; /* المسافة بين العناصر */
+padding-left: 90px;
+justify-content: flex-start;
+}
+.certificate-item {
+display: flex;
+flex-direction: column; /* تنظيم المحتوى عموديًا */
+align-items: center; /* محاذاة العناصر إلى الوسط */
+width: 300px; /* تحديد عرض العنصر */
+text-align: center; /* محاذاة النص إلى الوسط */
+}
+.certificate-item img {
+width: 100%; /* عرض الصورة 100% من العرض المتاح */
+height: auto; /* الحفاظ على النسب الصحيحة للصورة */
+border-radius: 10px; /* حواف دائرية للصورة */
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل للصورة */
+transition: transform 0.3s ease; /* تأثير تكبير الصورة عند المرور عليها */
+}
+.certificate-item img:hover {
+transform: scale(1.05); /* تكبير الصورة عند المرور عليها */
+}
+.certificate-details {
+margin-top: 15px; /* مسافة بين الصورة والتفاصيل */
+}
+.certificate-details h3 {
+font-size: 1.2rem;
+font-weight: bold;
+color: #222831; /* اللون الأساسي */
+}
+.certificate-details p {
+font-size: 1rem;
+color: #777777; /* اللون الرمادي للنصوص الثانوية */
+}
+.certificates-container {
+  display: flex;
+  flex-wrap: wrap;   /* يجعل العناصر تتنقل للصف التالي إذا امتلأت */
+  gap: 10px;   /* المسافة بين العناصر */
+}
+.certificate-item {
+  display: flex;
+  flex-direction: row; /* العناصر تكون في صف */
+  gap: 20px;   /* المسافة بين الصورة والوصف */
+  width: 48%;   /* عرض العنصر الواحد ليأخذ نصف العرض تقريبًا */
+}
+.certificate-item img {
+  max-width: 100%;
+  height: auto;
+  width: 366px; /* عرض الصورة 150px */
+}
+.certificate-details {
+  display: flex;
+  flex-direction: column; /* جعل الوصف يظهر تحت بعضه */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #ffffff;
+}
+.contact-form {
+  flex: 1;
+  margin-right: 40px;
+}
+.contact-form h2 {
+  margin-bottom: 10px;
+  color: #333333;
+}
+.contact-form p {
+  margin-bottom: 30px;
+  color: #666666;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #000;
+}
+.contact-form button {
+  background-color: #52525b;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  
+  border-radius: 10px;
+}
+.contact-form button:hover{background-color: #a8a8a8;}
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+}
+.contact-info a {
+  color: #000;
+  text-decoration: none;
+}
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.social-icons a {
+ 
+  padding: 10px;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.social-icons a i{
+  color: #71717a !important;
+}
+.social-icons i:hover{background-color: #a8a8a8;border-radius: 30%;}
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+.moo{color: #00BEC9;}
+
+
+
+
+
+.navbar {
+display: flex; /* أو أي طريقة عرض مناسبة */
+    /* ... تنسيقاتك القديمة للقائمة الرئيسية ... */
+}
+
+.nav-links {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+/* ... تنسيقاتك القديمة للروابط ... */
+}
+
+header .navbar li{margin-inline: 3px;}
+.header-container{    margin-top: 22px;}
+
+.mobile-menu-button{    display: none;}
+.mobile-link{    display: none;}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+
+.header-container{justify-content: flex-end; margin-top: 0;}
+.header-right{padding-right: 20px;
+  padding-top: 10px;}
+
+  body.dark-mode header .navbar{display: none;}
+  header .navbar{display: none;}
+  .navbar {
+    display: none; /* نخفي القائمة الرئيسية في الموبايل */
+}
+
+
+
+
+.project-gallery{padding-bottom: 70px;}
+
+
+
+.mobile-menu {
+    display: block; /* نظهر الجزء الخاص بالموبايل */
+}
+
+.mobile-menu-button {
+    background: none;
+    border: none;
+    color: white; /* أو أي لون مناسب */
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    border-radius: 27px;
+    background-color: #252529;
+    color: white;
+    border: #404040 solid 0.1px ;
+}
+
+.mobile-menu-button:hover {
+  border: 1px solid #a79f9f; /* إضافة بوردر عند الـ hover */
+  background-color: transparent; /* عشان الخلفية تفضل شفافة */
+}
+
+.mobile-menu-button i {
+  margin-left: 5px;
+}
+
+
+
+.mobile-nav-links {
+  display: none; /* مخفي في الأول */
+  position: fixed; /* عشان يكون ثابت في مكانه لما يظهر */
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 50%;
+  background-color: white;
+  color: black;
+  z-index: 101; /* أعلى من أي حاجة تانية عشان يظهر فوق الكل */
+  padding-top: 60px; /* عشان مينزلش تحت الهيدر */
+  opacity: 0; /* عشان يبدأ وهو مختفي بانسيابية */
+  visibility: hidden; /* عشان مياخدش مساحة وهو مختفي */
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; /* تأثير الظهور والاختفاء */
+}
+.dark-mode .mobile-nav-links{background-color:#18181b;color: white;}
+.mobile-nav-links.open {
+    display: block; /* نظهر القائمة لما نضيف كلاس 'open' */
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s; /* إلغاء التأخير عند الظهور */
+}
+
+.dark-mode .mobile-nav-links {background-color: #000;}
+
+.mobile-nav-links ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+.dark-mode .mobile-nav-links li a.mobile-link{color: white;}
+.mobile-nav-links li a.mobile-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #333;
+}
+
+  
+.mobile-nav-links li:last-child a.mobile-link {
+  border-bottom: none; /* عشان آخر عنصر ميكونش ليه بوردر من تحت */
+}
+
+.mobile-nav-links li a.mobile-link:hover {
+  background-color: #333;
+}
+
+    /* علامة الإكس */
+.close-menu-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 102; /* أعلى من القائمة نفسها */
+}
+    /* حواف للقائمة (ممكن تعدل القيم زي ما تحب) */
+.mobile-nav-links {
+  border-radius: 10px;
+  overflow: hidden; /* عشان الحواف تشتغل على العناصر اللي جواها */
+  margin: 20px; /* مساحة حوالين القائمة */
+}
+/* تعديل مكان زر المنيو عشان ميتغطاش بالقائمة لما تظهر */
+.mobile-menu-button {
+  z-index: 102;
+  /* ... باقي تنسيقات زر المنيو ... */
+}
+
+
+
+#darkModeToggle {
+  z-index: 102;
+  position: relative; /* عشان الـ z-index يشتغل */
+  margin-right: 15px;
+
+}
+
+
+
+
+
+
+
+
+
+
+  /* تعديلات على قسم الهيرو */
+  .hero {
+      flex-direction: column; /* جعل الصورة والنص يظهران تحت بعضهما */
+      padding: 20px;
+      text-align: center; /* توسيط المحتوى */
+  }
+  .hero-content {
+      text-align: center;
+  }
+  .profile-img {
+      margin: 0 auto 20px; /* توسيط الصورة وإضافة مسافة سفلية */
+  }
+  .hero-content img{        margin-top: 31px;  }
+  .hero-content .hh{font-size:26px ;text-align: center;width: 100%;}
+  .text-content {
+      max-width: 100%; /* جعل النص يأخذ كامل العرض */
+  }
+  .buttons {
+      flex-direction: column; /* جعل الأزرار تظهر تحت بعضها */
+      align-items: center;
+  }
+  .btn, .btn-outline {
+      width: 80%; /* جعل الأزرار تأخذ عرضًا أكبر */
+      margin-bottom: 10px;
+  }
+
+  #about p, #about h2 {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .special-heading {
+    font-size: 35px;
+    text-align: center;
+    color: #8f8f8f;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+    background:linear-gradient(to bottom, #e3e3e3, #eeee);
+  }
+    .special-heading + p {
+      text-align: center;
+      margin: -30px 0 0;
+      font-size: 20px;
+      color: #797F8F;
+      
+    }
+
+  /* تعديلات على قسم المهارات */
+  .skills-list {
+      padding: 0;
+  }
+  .skills-list li {
+      display: block; /* جعل المهارات تظهر تحت بعضها */
+      margin-bottom: 8px;
+      text-align: start;
+  }
+
+  /* تعديلات على قسم المشاريع */
+  #projects .project-gallery {
+      grid-template-columns: 1fr; /* جعل المشاريع تظهر في عمود واحد */
+  }
+  #categories-container{padding-top: 0;}
+.category-card{width: 85%;
+  padding-inline: 10px;}
+
+
+
+  /* تعديلات على قسم الشهادات */
+  .certificates-container {
+      flex-direction: column; /* جعل الشهادات تظهر تحت بعضها */
+      align-items: center;
+      padding-left: 4px;
+
+  }
+
+  .category-card .project-arrow-link{display: none;}
+
+.certificate-details{margin-top: 0;}
+
+  .certificate-item {
+      flex-direction: column; /* ترتيب العناصر عمودياً في الشهادة الواحدة */
+      width: 90%; /* جعل عرض الشهادات أكبر */
+      margin-bottom: 20px;
+      text-align: center;
+  }
+  .certificate-item img {
+      width: 100%; /* جعل الصورة تأخذ كامل عرض الحاوية */
+      max-width: none; /* إزالة أي قيود على العرض الأقصى */
+      height: auto;
+  }
+
+.special-heading h2{margin-left: 15px;}
+.certificate-details p{margin-block:0}
+
+
+
+  /* تعديلات على قسم التواصل */
+  .container {
+      flex-direction: column; /* جعل الفورم ومعلومات التواصل يظهران تحت بعضهما */
+      padding: 20px;
+  }
+  .contact-form {
+      margin-right: 0;
+      margin-bottom: 30px;
+  }
+  .contact-info {
+      align-items: center; /* توسيط معلومات التواصل */
+  }
+
+  /* تعديلات على الفوتر */
+  .footer {
+      padding: 15px;
+      font-size: 10px;
+      
+  }
+
+
+
+}
+
+
+
+
+.social-icons i{color: #00BEC9;}
+
+
+
+
+
+
+.dark-mode .dark-mode-toggle{background-color: #252529;}
+.dark-mode-toggle{    background-color: white;}
+
+
+/* في ملف style.css */
+
+
+
+
+
+
+
+
+
+.mo {
+  font-size: 29px;
+  font-weight: 700;
+  padding-left: 20px;
+  display: inline-block; /* مهم جدًا علشان transform */
+  animation: Hagag 1s ease-in-out 0.3s infinite normal;
+}
+
+@keyframes Hagag {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(0, -15px); }
+  100% { transform: translate(0, 0); }
+}
+
+
+
+
+
+
+
+
+
+
+/* special machine learning projects */
+
+
+.project-gallery{    width: 92%;
+  padding-left: 61px;    padding-top: 112px;
+}
+.project-card {
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
+.dark-mode .project-card{  border: 1px solid #2f454c;}
+
+.special-heading h2{    padding-bottom: 40px;
+  padding-left: 116px;}
+
+
+.project-card {
+  background-color: #c1c4c5;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 5px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  height: 186px;
+  border-radius: 10px;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00ADB5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+body.dark-mode .project-card {
+  background-color: #393E46;
+}
+
+body.dark-mode .project-card:hover {
+  background-color: #444;
+}
+
+body.dark-mode .project-card a {
+  color: #00ADB5;
+}
+.dark-mode .project-card h3{color: white;}
+.dark-mode .project-card p{color: #a1a1aa;}
+
+.mainpage{text-decoration: none;
+  color: inherit;
+font-size: 25px;
+}
+.project-card{    width: 92%;
+ padding-inline:  16px !important;
+
+}
+
+
+
+  @media (max-width: 768px) {
+
+.special-heading h2{    padding-bottom: 40px;
+      padding-left: 0;}
+    
+.project-gallery{ width: 88%;
+        padding-left: 14px;}
+#projects{padding-top: 5px;}
+.mainpage{    padding-right: 113px;}
+.category-card a h2,p{width: 100%;margin-left: 0;}
+
+  }
+
+
+ .headercategory{  margin-top: -11px !important;
+  }
+
