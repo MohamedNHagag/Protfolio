@@ -133,6 +133,3 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(item);
   });
 });
-
-
-
