@@ -49,7 +49,7 @@ section {
 
 
 .nav-links a.active {
-  color: #2dd4bf; /* لون النص المطلوب */
+  color: #00ADB5 !important; /* لون النص المطلوب */
   font-weight: bold;
   padding-bottom: 6px; 
   }
@@ -1139,7 +1139,7 @@ header .navbar li{margin-inline: 3px;}
   margin-left: 5px;
 }
 
-
+.mobile-menu-button{background-color: rgb(136, 136, 136);}
 
 .mobile-nav-links {
   display: none; /* مخفي في الأول */
@@ -1189,22 +1189,21 @@ header .navbar li{margin-inline: 3px;}
   background-color: #333;
 }
 
- /* علامة الإكس */
+    /* علامة الإكس */
 .close-menu-button {
-position: absolute;
-top: 15px;
-/* right: 20px; */ /* احذف هذا السطر أو ضعه كتعليق */
-left: 20px; /* أضف هذا السطر لتحديد المسافة من اليسار */
+  position: absolute;
+  top: 15px;
+  /* right: 20px; */ /* احذف هذا السطر أو ضعه كتعليق */
+  left: 20px;     /* أضف هذا السطر لتحديد المسافة من اليسار */
 
-background: none;
-border: none;
-color: black;
-font-size: 2em;
-cursor: pointer;
-z-index: 102; /* أعلى من القائمة نفسها */
+  background: none;
+  border: none;
+  color: black;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 102; /* أعلى من القائمة نفسها */
 }
 .dark-mode .close-menu-button{color: #eee;}
-
     /* حواف للقائمة (ممكن تعدل القيم زي ما تحب) */
 .mobile-nav-links {
   border-radius: 10px;
@@ -1222,7 +1221,8 @@ z-index: 102; /* أعلى من القائمة نفسها */
 #darkModeToggle {
   z-index: 102;
   position: relative; /* عشان الـ z-index يشتغل */
-  margin-right: 15px;
+    margin-right: 25px;
+    margin-top: 1px;
 
 }
 
@@ -1302,9 +1302,7 @@ z-index: 102; /* أعلى من القائمة نفسها */
 .category-card{width: 85%;
   padding-inline: 10px;}
 
-  .category-card a {
-        padding-inline: 0;
-    }
+
 
   /* تعديلات على قسم الشهادات */
   .certificates-container {
@@ -1333,6 +1331,7 @@ z-index: 102; /* أعلى من القائمة نفسها */
 .special-heading h2{margin-left: 15px;}
 .certificate-details p{margin-block:0}
 
+.category-card a{padding-inline: 0;}
 
 
   /* تعديلات على قسم التواصل */
@@ -1495,3 +1494,22 @@ font-size: 25px;
  .headercategory{  margin-top: -11px !important;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
