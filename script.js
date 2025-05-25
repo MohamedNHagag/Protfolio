@@ -1,23 +1,35 @@
-// Dark Mode Toggle
 const toggleButton = document.getElementById('darkModeToggle');
 const body = document.body;
 
-
 const mobileMenuButton = document.querySelector('.mobile-menu-button');
 const mobileNavLinks = document.querySelector('.mobile-nav-links');
-const closeMenuButton = document.querySelector('.close-menu-button'); // جبنا زر الإغلاق
+const closeMenuButton = document.querySelector('.close-menu-button');
 
+// فتح وإغلاق القائمة
 if (mobileMenuButton && mobileNavLinks && closeMenuButton) {
     mobileMenuButton.addEventListener('click', () => {
         mobileNavLinks.classList.add('open');
+        document.body.classList.add('blur');
     });
 
     closeMenuButton.addEventListener('click', () => {
         mobileNavLinks.classList.remove('open');
+        document.body.classList.remove('blur');
+    });
+
+    // إغلاق عند الضغط خارج القائمة
+    document.addEventListener('click', function (event) {
+        if (mobileNavLinks.classList.contains('open')) {
+            if (!mobileNavLinks.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                mobileNavLinks.classList.remove('open');
+                document.body.classList.remove('blur');
+            }
+        }
     });
 }
 
-// دالة لتحديث الأيقونة بناءً على الوضع الحالي
+
+// تغيير أيقونة الوضع الداكن
 function updateToggleButtonIcon() {
   if (body.classList.contains('dark-mode')) {
     toggleButton.innerHTML = '<span class="icon sun-icon">☀️</span>';
@@ -45,7 +57,6 @@ toggleButton.addEventListener('click', () => {
 // يمكنك أيضاً إضافة logic لحفظ اختيار المستخدم في Local Storage
 // ليبقى الوضع الليلي/النهاري مفعلاً حتى بعد إعادة تحميل الصفحة.
 // هذا يتطلب قراءة من Local Storage عند تحميل الصفحة وكتابة فيه عند تبديل الوضع.
-
 
 
 
